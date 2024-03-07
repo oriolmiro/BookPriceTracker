@@ -10,6 +10,7 @@ class Alert extends Model
     use HasFactory;
 
     protected $fillable = ['user_id','book_id','target_price','desired_condition','active'];
+
     public function user()
     {
         return $this->belongsTo(User::class);
