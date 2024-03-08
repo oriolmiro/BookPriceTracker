@@ -16,6 +16,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+})->name('home');
+Route::get('/test', function () {
+    return view('wireframe.testhome');
+});
+Route::get('/testsearch', function () {
+    return view('wireframe.testsearch');
+});
+Route::get('/testbook', function () {
+    return view('wireframe.testbook');
 });
 Route::get('/books/{name}/{id}',[BookController::class,'index'])->name('book.index');
 
