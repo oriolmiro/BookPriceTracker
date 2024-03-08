@@ -1,5 +1,5 @@
 @extends('layouts.appbook')
-@section('title', 'Home Page')
+@section('title', 'Book Page')
 
 @section('content')
 <h1 class="text-2xl font-bold mb-4">Detalles del Libro</h1>

@@ -1,33 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BookPriceTrade</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        .bg-purple-deep { background-color: #4B0082; }
-        .bg-lavender { background-color: #E6E6FA; }
-        .text-soft-black { color: #333333; }
-        .text-slate-gray { color: #708090; }
-        .accent-color { background-color: #FF851B; color: white; }
-    </style>
-</head>
-<body class="bg-lavender text-soft-black font-sans">
+@extends('layouts.appbook')
+@section('title', 'Search Page')
 
-    <header class="bg-purple-deep text-white">
-        <div class="container mx-auto p-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold">BookPriceTrade</a>
-            <nav>
-                <a href="#" class="px-4 py-2 hover:bg-lavender hover:text-purple-deep rounded">Inicio</a>
-                <a href="#" class="px-4 py-2 hover:bg-lavender hover:text-purple-deep rounded">Categorías</a>
-                <a href="#" class="px-4 py-2 hover:bg-lavender hover:text-purple-deep rounded">Destacados</a>
-                <a href="#" class="px-4 py-2 hover:bg-lavender hover:text-purple-deep rounded">Contacto</a>
-            </nav>
-        </div>
-    </header>
-
-    <div class="container mx-auto p-4">
+@section('content')
 
         <div class="flex justify-center items-center my-8">
             <input type="search" placeholder="Buscar libros..." class="p-2 w-full max-w-lg rounded-l-lg border-0 focus:ring-2 focus:ring-purple-deep" style="outline: none;">
@@ -67,12 +41,5 @@
                 </div>
     
             </div>
-        </div>  
-        <footer class="bg-purple-deep text-white text-center p-4 mt-8">
-            <p>© 2024 BookPriceTrade. Todos los derechos reservados.</p>
-            <p>Síguenos en nuestras redes sociales.</p>
-        </footer>
-    </div>
-
-</body>
-</html>
+        </div>
+@endsection
