@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('author');
             $table->string('isbn')->unique();
             $table->string('edition')->nullable();
+            $table->string('cover')->nullable();
+            $table->text('description')->nullable();
+            $table->integer('pages')->nullable();
             $table->timestamps();
         });
     }

@@ -16,6 +16,10 @@ class BookController extends Controller
         $books = Book::all();
         return view('books.index', compact('books'));
     }
+    public function APIindex()
+    {
+        return response()->json(Book::all());
+    }
 
     /**
      * Show the form for creating a new resource.

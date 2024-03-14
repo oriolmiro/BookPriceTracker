@@ -15,6 +15,16 @@ class BookStoreController extends Controller
     {
         //
     }
+    /**
+     * Display a listing of the resource for API.
+     */
+    public function APIindex()
+    {
+        //$bookStores = BookStore::all();
+        //select all book stores with name and url
+        $bookStores = BookStore::select('name', 'url')->get();
+        return response()->json($bookStores, 200);
+    }
 
     /**
      * Show the form for creating a new resource.
