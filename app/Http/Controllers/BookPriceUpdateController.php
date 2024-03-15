@@ -14,8 +14,8 @@ class BookPriceUpdateController extends Controller
 
     public function takeISBM(){
         //take the ISBM from a random Book
-        $book = Book::inRandomOrder()->first();
-        return response()->json($book->isbn, 200);
+        $book = Book::where('isbn','!=','')->inRandomOrder()->first();
+        return $book->isbn;
         
     }
 
