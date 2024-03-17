@@ -19,3 +19,4 @@ yarn-error.log
 /.vscode
 database/data/books.json
 public/sitemap.xml
+resources/views/layouts/analytics.blade.php
