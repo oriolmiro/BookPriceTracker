@@ -35,7 +35,9 @@
                     </div>
                 </div>
                 @endforeach
-        
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {{ $books->links() }}
             </div>
         </section>
 @endsection

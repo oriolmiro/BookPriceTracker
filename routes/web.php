@@ -17,6 +17,9 @@ use App\Http\Controllers\BookStoreController;
 */
 
 Route::get('/', HomeController::class)->name('home');
+Route::get('/books/{title}/{author}/{id}', [BookController::class,'show'])->name('books.show');
+Route::get('books', [BookController::class,'index'])->name('books.index');
+
 
 Route::get('/test', function () {
     return view('wireframe.testhome');

@@ -18,5 +18,9 @@ class Book extends Model
     {
         return $this->hasMany(Alert::class);
     }
+    public function route()
+    {
+        return route('books.show', array('title' => $this->title, 'author' => $this->author, 'id' => $this->id));
+    }
     
 }

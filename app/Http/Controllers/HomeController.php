@@ -10,7 +10,7 @@ class HomeController extends Controller
     //
     public function __invoke()
     {
-        $books = Book::take(20)->get();
+        $books = Book::paginate(20);
         return view('home', compact('books'));
     }
 }

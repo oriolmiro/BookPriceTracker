@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
+use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
 {
@@ -13,9 +14,10 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = Book::all();
+        $books = Book::paginate(15);
         return view('books.index', compact('books'));
     }
+
     public function APIindex()
     {
         return response()->json(Book::all());
@@ -40,8 +42,9 @@ class BookController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Book $book)
+    public function show(String $title, String $author, int $id)
     {
+        $book = Book::find($id);
         return view('books.show', compact('book'));
     }
 
