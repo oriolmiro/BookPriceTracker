@@ -76,4 +76,27 @@ class BookController extends Controller
         $book->delete();
         return redirect()->route('books.index');
     }
+
+    /**
+     * Create a sitemap for the books in file storage.
+     */
+    public function createSitemap(){
+        $books = Book::all();
+        
+    // Iniciar el document XML del sitemap
+    $sitemap = new \SimpleXMLElement('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>');
+    
+    // Afegir cada llibre al sitemap
+    foreach ($books as $book) {
+        $url = $sitemap->addChild('url');
+        $url->addChild('loc', htmlspecialchars($book->route()));
+        $url->addChild('lastmod', $book->updated_at->toAtomString());
+        $url->addChild('changefreq', 'monthly');
+        $url->addChild('priority', '0.8');
+    }
+
+    // Guardar el sitemap a l'arrel del domini
+    $sitemap->asXML(public_path('sitemap.xml'));
+
+    }
 }

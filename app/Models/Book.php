@@ -20,7 +20,7 @@ class Book extends Model
     }
     public function route()
     {
-        return route('books.show', array('title' => $this->title, 'author' => $this->author, 'id' => $this->id));
+        return route('books.show', array('title' => $this->title, 'author' => $this->author === '' ? 'none' : $this->author, 'id' => $this->id));
     }
     
 }

@@ -24,3 +24,4 @@ Route::get('/books', [BookController::class,'APIindex']);
 Route::get('/bookStores', [BookStoreController::class, 'APIindex']);
 Route::get('/bookPriceUpdate/', [BookPriceUpdateController::class, 'takeISBM']);
 Route::post('/bookPriceUpdate/', [BookPriceUpdateController::class,'updatePrice']);
+Route::get('/createSitemap', [BookController::class, 'createSitemap']);
