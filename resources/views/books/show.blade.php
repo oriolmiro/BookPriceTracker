@@ -20,10 +20,10 @@
             <!-- Ejemplo de una tienda -->
             @foreach ($book->prices as $price)
                 <div class="bg-white p-4 rounded-lg flex items-center">
-                    <a href="{{$price->product_url}}" rel="nofollow">
+                    <a href="{{route('goto',['id' => $price->id])}}" rel="nofollow">
                     <img src="https://via.placeholder.com/50" alt="{{$price->bookStore->name}}" class="mr-2">
                     </a>
-                    <a href="{{$price->product_url}}" rel="nofollow">
+                    <a href="{{route('goto',['id' => $price->id])}}" rel="nofollow">
                     <p>{{$price->bookStore->name}}</p>
                     <p>{{$price->current_price}} €</p>
                     </a>

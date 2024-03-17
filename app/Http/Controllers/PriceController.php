@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Price;
 use App\Http\Requests\StorePriceRequest;
 use App\Http\Requests\UpdatePriceRequest;
+use Illuminate\Support\Facades\Log;
 
 class PriceController extends Controller
 {
@@ -62,5 +63,17 @@ class PriceController extends Controller
     public function destroy(Price $price)
     {
         //
+    }
+
+    public function goto($id)
+    {
+        $price = Price::find($id);
+        Log::channel('externalLinks')->info('', [
+            'book_id' => $price->book_id,
+            'book_store' => $price->bookStore->name,
+            'url' => $price->product_url,
+            'timestamp' => now(),
+        ]);
+        return redirect()->away($price->product_url);
     }
 }

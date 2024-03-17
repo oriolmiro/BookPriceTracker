@@ -4,6 +4,8 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookStoreController;
+use App\Http\Controllers\PriceController;
+use App\Models\Price;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +21,7 @@ use App\Http\Controllers\BookStoreController;
 Route::get('/', HomeController::class)->name('home');
 Route::get('/books/{title}/{author}/{id}', [BookController::class,'show'])->name('books.show');
 Route::get('books', [BookController::class,'index'])->name('books.index');
+Route::get('/goto/{id}',[PriceController::class,'goto'])->name('goto');
 
 
 Route::get('/test', function () {
